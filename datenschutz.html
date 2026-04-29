@@ -15,7 +15,7 @@
 </div>
 
 <div class="wrap">
-  <a href="index.html?lang=de" class="brand"><b>WWS</b> <span>Advisory</span></a>
+  <a href="index.html" class="brand"><b>WWS</b> <span>Advisory</span></a>
   <div class="brand-legal">GmbH · Berlin</div>
 
   <h1>Datenschutzerklärung</h1>
@@ -29,31 +29,55 @@
     <div>E-Mail: <a href="mailto:office@wws-advisory.de">office@wws-advisory.de</a></div>
   </div>
 
-  <h2>2. Allgemeines zur Datenverarbeitung</h2>
-  <p>Diese Website verzichtet bewusst auf jegliche Form von Tracking, Analytics, Werbe-Cookies oder Einbindung externer Dienste. Beim Aufruf werden keine personenbezogenen Daten an Dritte übermittelt.</p>
+  <h2>2. Hosting (GitHub Pages)</h2>
+  <p>Diese Website wird auf den Servern von GitHub Pages gehostet (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). Beim Aufruf der Website werden durch GitHub technisch notwendige Daten in Server-Logfiles erfasst (insbesondere IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Seite, Referrer-URL, Browser und Betriebssystem). Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am technisch fehlerfreien Betrieb der Website). Für die Datenübermittlung in die USA stützt sich GitHub auf das EU-US Data Privacy Framework.</p>
+  <p>Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank">GitHub Privacy Statement</a>.</p>
 
-  <h2>3. Server-Logfiles</h2>
-  <p>Beim Aufruf dieser Website erhebt der Hosting-Provider technisch notwendige Daten in Server-Logfiles, die Ihr Browser automatisch übermittelt. Dies sind: IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Seite, Referrer-URL, verwendeter Browser und Betriebssystem.</p>
-  <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem technisch fehlerfreien Betrieb der Website). Diese Daten werden nicht mit anderen Datenquellen zusammengeführt und nach kurzer Zeit gelöscht.</p>
+  <h2>3. Webanalyse mit Matomo</h2>
+  <p>Diese Website nutzt Matomo (ehemals Piwik), eine Open-Source-Software zur statistischen Auswertung von Websitebesuchen. Matomo wird auf einem eigenen Server in Deutschland (Strato AG, Berlin) betrieben. Ihre Daten werden nicht an Dritte weitergegeben.</p>
+  <p>Bei der Analyse werden folgende Daten verarbeitet: die anonymisierte IP-Adresse, aufgerufene Seiten, Datum und Uhrzeit des Zugriffs, Browser-Typ und Betriebssystem sowie die Herkunftsseite (Referrer). Die IP-Adresse wird vor der Speicherung anonymisiert, sodass kein Rückschluss auf einzelne Nutzer möglich ist.</p>
+  <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der anonymisierten Analyse des Nutzerverhaltens zur Verbesserung des Webangebots).</p>
+  <p><strong>Opt-Out:</strong> Sie können der Datenerfassung durch Matomo jederzeit widersprechen. Nutzen Sie dazu die folgende Option:</p>
+  <div id="matomo-opt-out" style="border:1px solid rgba(0,0,0,0.12);border-radius:8px;padding:18px;max-width:600px;margin:14px 0;font-size:.9rem;">
+    <p id="matomo-opt-out-text" style="margin-bottom:.6rem;"></p>
+    <label style="display:flex;align-items:center;gap:10px;cursor:pointer;">
+      <input type="checkbox" id="matomo-opt-out-checkbox" style="width:16px;height:16px;" />
+      <span id="matomo-opt-out-label"></span>
+    </label>
+  </div>
+  <script>
+  (function(){
+    var t=document.getElementById('matomo-opt-out-text');
+    var c=document.getElementById('matomo-opt-out-checkbox');
+    var l=document.getElementById('matomo-opt-out-label');
+    function isOut(){return document.cookie.indexOf('mtm_consent_removed=')>-1}
+    function ui(){
+      if(isOut()){t.textContent='Sie haben der Datenerfassung durch Matomo widersprochen. Ihr Besuch wird nicht erfasst.';c.checked=false;l.textContent='Tracking wieder aktivieren';}
+      else{t.textContent='Ihr Besuch wird derzeit von Matomo erfasst.';c.checked=true;l.textContent='Tracking ist aktiv';}
+    }
+    c.addEventListener('change',function(){
+      if(this.checked){document.cookie='mtm_consent_removed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';if(typeof _paq!=='undefined')_paq.push(['forgetUserOptOut']);}
+      else{document.cookie='mtm_consent_removed=1; expires=Fri, 31 Dec 2099 23:59:59 UTC; path=/;';if(typeof _paq!=='undefined')_paq.push(['optUserOut']);}
+      ui();
+    });
+    ui();
+  })();
+  </script>
 
-  <h2>4. Hosting</h2>
-  <p>Diese Website wird auf den Servern von GitHub Pages gehostet (GitHub, Inc., 88 Colusa Street, San Francisco, CA 94110, USA). GitHub verarbeitet im Rahmen der Auslieferung der Website technisch notwendige Daten (insbesondere IP-Adressen). Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Für die Datenübermittlung in die USA stützt sich GitHub auf das EU-US Data Privacy Framework.</p>
-
-  <h2>5. Schriftarten</h2>
+  <h2>4. Schriftarten</h2>
   <p>Diese Website verwendet ausschließlich lokal gehostete Schriften. Es werden keine Schriften von externen Anbietern (z.B. Google Fonts) nachgeladen. Damit erfolgt keine Übertragung Ihrer IP-Adresse an Dritte.</p>
 
-  <h2>6. Kontaktaufnahme per E-Mail</h2>
+  <h2>5. Kontaktaufnahme per E-Mail</h2>
   <p>Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben zum Zweck der Bearbeitung der Anfrage und für mögliche Anschlussfragen gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b oder f DSGVO. Eine Weitergabe an Dritte erfolgt nicht.</p>
 
-  <h2>7. Ihre Rechte</h2>
-  <p>Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:</p>
-  <p>Recht auf Auskunft (Art. 15 DSGVO), Recht auf Berichtigung (Art. 16 DSGVO), Recht auf Löschung (Art. 17 DSGVO), Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO), Recht auf Datenübertragbarkeit (Art. 20 DSGVO) sowie Widerspruchsrecht gegen die Verarbeitung (Art. 21 DSGVO).</p>
+  <h2>6. Ihre Rechte</h2>
+  <p>Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten: Recht auf Auskunft (Art. 15 DSGVO), Recht auf Berichtigung (Art. 16 DSGVO), Recht auf Löschung (Art. 17 DSGVO), Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO), Recht auf Datenübertragbarkeit (Art. 20 DSGVO) sowie Widerspruchsrecht gegen die Verarbeitung (Art. 21 DSGVO).</p>
   <p>Zur Ausübung dieser Rechte wenden Sie sich bitte an die oben genannte E-Mail-Adresse.</p>
 
-  <h2>8. Beschwerderecht bei der Aufsichtsbehörde</h2>
-  <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren. Zuständig ist der Bayerische Landesbeauftragte für den Datenschutz, Wagmüllerstraße 18, 80538 München.</p>
+  <h2>7. Beschwerderecht bei der Aufsichtsbehörde</h2>
+  <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren. Zuständig ist die Berliner Beauftragte für Datenschutz und Informationsfreiheit, Alt-Moabit 59–61, 10555 Berlin, <a href="https://www.datenschutz-berlin.de" target="_blank">datenschutz-berlin.de</a>.</p>
 
-  <h2>9. Aktualität dieser Datenschutzerklärung</h2>
+  <h2>8. Aktualität dieser Datenschutzerklärung</h2>
   <p>Stand: April 2026. Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht.</p>
 
   <div class="foot">
